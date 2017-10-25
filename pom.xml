@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>io.pudge.gaya.crm</groupId>
-    <artifactId>gaya-crm</artifactId>
+    <artifactId>gaya.crm</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>war</packaging>
     <name>Gaya CRM</name>

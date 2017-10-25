@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "io.pudge.gaya.crm",
+      "nativeLanguage": "fr"
+    },
+    "jhipsterVersion": "4.10.1",
+    "baseName": "GayaCRM",
+    "packageName": "io.pudge.gaya.crm",
+    "packageFolder": "io/pudge/gaya/crm",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSocialSignIn": true,
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "9102d9f438c65e866d6b4ff8f267cf1b64e93986",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "applicationType": "monolith",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "fr",
+      "zh-cn",
+      "en"
+    ]
+  }
+}

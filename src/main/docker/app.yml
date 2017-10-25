@@ -1,0 +1,19 @@
+version: '2'
+services:
+    gayacrm-app:
+        image: gayacrm
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://gayacrm-mysql:3306/gayacrm?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=gayacrm-elasticsearch:9300
+        ports:
+            - 8080:8080
+    gayacrm-mysql:
+        extends:
+            file: mysql.yml
+            service: gayacrm-mysql
+    gayacrm-elasticsearch:
+        extends:
+            file: elasticsearch.yml
+            service: gayacrm-elasticsearch

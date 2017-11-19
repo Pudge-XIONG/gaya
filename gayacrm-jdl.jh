@@ -1,0 +1,85 @@
+entity Entreprise{
+	code String required,
+    name String required
+}
+
+entity Agence {
+	code String required,
+  	name String required
+}
+
+entity Country {
+	code String required,
+	name String required
+}
+
+entity Location {
+	streetAddress String,
+	postalCode String,
+	city String,
+	stateProvince String
+}
+
+entity ConfidentiqlityLevel{
+	code String required,
+    label String required
+}
+
+entity Gender{
+    code String required,
+    label String required
+}
+
+entity Employee {
+	candidateId String required,
+	firstName String required,
+	lastName String required,
+	regNum String required,
+	photo ImageBlob,
+	phoneNumber String,
+	phoneNumberPro String,
+	email String,
+	emailEMC String,
+
+	hireDate ZonedDateTime required
+}
+
+entity Language {
+	code String required,
+    language String required
+}
+
+entity LanguageLevel{
+	level String required
+}
+
+relationship OneToOne {
+	Department{location} to Location
+}
+
+relationship ManyToMany {
+	Job{task(title)} to Task{job}
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Entreprise{agence} to Agence
+}
+
+relationship ManyToOne {
+	Agence{entreprise} to Entreprise,
+    Employee{agence} to Agence,
+    Employee{confidentiqlityLevel} to ConfidentiqlityLevel,
+    Employee{gender} to Gender,
+    Employee{location} to Location,
+    Location{country} to Country,
+    LanguageSkill{language} to Language,
+    LanguageSkill{level} to LanguageLevel
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+	JobHistory{job} to Job,
+	JobHistory{department} to Department,
+	JobHistory{employee} to Employee
+}
